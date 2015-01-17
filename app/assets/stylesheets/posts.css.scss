@@ -1,3 +1,134 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.post-form {
+	font-family: Raleway;
+	max-width: 900px;
+	width: 80%;
+	margin: 0px auto;
+	line-height: 2.2em;
+	text-align: left;
+	/*border: 1px solid white;
+	padding: 10px;
+	border-radius: 10px;*/
+}
+.post-form h2 {
+	font-size: 36px;
+}
+textarea {
+	resize: none;
+}
+input:focus, textarea:focus {
+	outline: none;
+}
+
+
+#post-quote {
+	font-weight: bolder;
+	font-family: Raleway;
+	width: 100%;
+	font-size: 50px;
+	background-color: rgba(42,42,42,0.0);
+	border: none;
+	border-bottom: 1px dashed white;
+	padding: 5px;
+	margin-top: 200px;
+	color: #00B4A0;
+}
+
+#post-source {
+	color: yellow;
+	font-weight: bold;
+	font-size: 34px;
+	border: none;
+	background-color: rgba(42,42,42,0.0);
+	padding: 5px;
+	margin-top: 20px;
+	word-wrap: break-word;
+	float: right;
+	text-align: right;
+}
+
+.save-post {
+	width: 200px;
+	font-family: Raleway;
+	font-size: 28px;
+	border-radius: 100px;
+	background-color: rgba(23,31,31,0.0);
+	color: white;
+	border: 1px dashed white;
+	float:right;
+	padding: 20px;
+	margin-top: 20px;
+	display:inline-block;
+}
+/*add css3 shake animation to button: http://www.cssreset.com/css3-webkit-animation-shake-links/ */
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+.save-post:hover,
+.save-post:focus {
+	transition: .4s;
+	background-color:#840737;
+	color:white;
+	border:1px dashed yellow;
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 0.8s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+
+label.collection_check_boxes {
+	margin-right: 10px;
+	vertical-align: -2px;
+	margin-left: 2px;
+	border: 1px solid #35383D;
+	color: #35383D;
+	padding: 10px;
+	border-radius: 100px;
+}
+
+label.collection_check_boxes:checked {
+	border: 1px solid yellow;
+	color: yellow;
+}
+input.check_boxes {
+	visibility: hidden;
+}
+/*styling placeholder text: http://css-tricks.com/snippets/css/style-placeholder-text/*/
+::-webkit-input-placeholder {
+	color: #35383D;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: #35383D;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: #35383D;
+}
+
+:-ms-input-placeholder {  
+	color: #35383D;
+}
+
+
+/*Hiding placeholder text: http://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery*/
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */

@@ -4,6 +4,8 @@ Shitihear::Application.routes.draw do
   root :to => 'pages#home'
   get "pages/home"
 
+  resources :categories
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'

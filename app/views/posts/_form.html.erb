@@ -1,10 +1,27 @@
-<%= simple_form_for(@post, html: { class: "form-horizontal"}) do |f| %>
-  <%= f.error_notification %>
 
-  <%= f.input :description, as: :text, input_html: { rows: "3" } %>
-  <%= f.input :source, as: :text, input_html: { rows: "3" } %>
+<%= simple_form_for(@post) do |f| %>
+<div class="post-form">
+	<%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
-  </div>
+	<!-- <h2>What #$*% did you hear?</h2> -->
+	<%= f.text_field :description, as: :text, input_html: { rows: "1" }, :label => false, :autocomplete => :off, placeholder: "What shit was said?", :id=>"post-quote" %>
+	<br>
+	<%= f.text_field :source, as: :text, input_html: { rows: "1" }, :autocomplete => :off, placeholder: "-- Who said the shit (optional)", :label => false, :id=>"post-source" %>
+	<br>
+	<br>
+	<br>
+
+	<!-- works but not saving
+	<% for category in Category.find(:all) %>
+	<div>
+	<%= check_box_tag "product[category_ids][]", category.id, @categorizations %>
+		<%= category.name %>
+	</div>
+	<% end %> -->
+	 <!-- <%= f.association :categories, :as => :check_boxes, collection: Category.where(Category.arel_table[:id].not_eq(1)), :input_html => { :class => "category-selector" }, :label => false, prompt: "Category" %>  -->
+
+	<div class="form-actions">
+		<%= f.button :submit, class: "save-post shake" %>
+	</div>
+</div>
 <% end %>
