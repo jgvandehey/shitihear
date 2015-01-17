@@ -2,13 +2,20 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
     end
   end
+
+  def vote
+  value = params[:type] == "up" ? 1 : -1
+  @post = Post.find(params[:id])
+  @post.add_or_update_evaluation(:votes, value, current_user)
+  redirect_to :back, notice: "Thank you for voting"
+end
 
   # GET /posts/1
   # GET /posts/1.json

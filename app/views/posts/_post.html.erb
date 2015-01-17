@@ -1,9 +1,27 @@
-    <tr>
-        <td><%= post.description %></td>
-        <td><%= post.source %></td>
-        <td><%= link_to 'Show', post %></td>
-        <% if current_user == post.user %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-    </tr>
+<div class="post-form">
+	<div id="post-quote" style="padding-bottom: 20px">
+		<%= post.description %>
+	</div>
+	<br>
+	<div id="post-source">
+		-- <%= post.source %>
+	</div>
+	<% Category.find(post.category_ids).each do |c| %> 
+	<form action="/categories/<%= c.id %>">
+		<input id="post-category" type="submit" value="<%= c.name %>" style="background-color:#">
+	</form>
+	<% end %>
+	<!-- <div id="post-author"><%= User.find(post.user_id).name %></div> -->
+	<%= pluralize post.reputation_for(:votes).to_i, "vote" %>
+	<% if current_user && !current_user.voted_for?(post) %>
+	<div id="upvote-box">
+		<%= link_to content_tag(:i, "", class: "glyphicon glyphicon-arrow-up") + "", vote_post_path(post, type: "up"), method: "post" %>
+	</div>
+
+	<!-- <%= button_to "up", vote_post_path(post, type: "up"), method: "post", class: "post-vote" %>
+	<%= button_to "Down", vote_post_path(post, type: "down"), method: "post", class: "post-vote" %> -->
+	<% end %>
+	<br>
+	<br>
+	<br>
+</div>

@@ -1,14 +1,14 @@
-<div class="row">
-    <div class="span6 offset3">
-        <div class="well">
-            <p>
-              <%= @post.description %>
-            </p>
-            <p>
-              <%= @post.source %>
-            </p>
-            <%= link_to 'Edit', edit_post_path(@post) %> |
-            <%= link_to 'Back', posts_path %>
-        </div>
+<div class="post-form">
+    <div id="post-quote" style="padding-bottom: 20px">
+        <%= @post.description %>
     </div>
+    <br>
+    <div id="post-source">
+        <%= @post.source %>
+    </div>
+    <% current_user == @post.user_id %>
+    <%= link_to 'Edit', edit_post_path(@post), :id => "post-edit" %>  <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'You sure, bro or brodette?' }, :id => "post-edit" %>
+    <br>
+    <br>
+    <br>
 </div>

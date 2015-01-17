@@ -27,7 +27,7 @@ input:focus, textarea:focus {
 
 #post-quote {
 	font-weight: bolder;
-	/*font-family: Raleway;*/
+	font-family: Raleway;
 	width: 100%;
 	font-size: 50px;
 	background-color: rgba(42,42,42,0.0);
@@ -35,11 +35,12 @@ input:focus, textarea:focus {
 	border-bottom: 1px dashed white;
 	padding: 5px;
 	margin-top: 200px;
-	color: #00B4A0;
+	color: #69E0E6;
+	line-height: 1.2em;
 }
 
 #post-source {
-	color: yellow;
+	color: #F2DE31;
 	font-weight: bold;
 	font-size: 34px;
 	border: none;
@@ -90,8 +91,55 @@ input:focus, textarea:focus {
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
 }
+#post-edit {
+	font-family: Raleway;
+	font-size: 24px;
+	border: 1px dashed white;
+	padding: 10px;
+	border-radius: 100px;
+	text-decoration: none;
+}
+#post-edit:hover {
+	text-decoration:none;
+	background-color: rgba(42,44,42,0.0);
+	color: white;
+}
 
+#post-category {
+	font-family: Raleway;
+	font-size: 24px;
+	border: 1px dashed white;
+	background-color: rgba(32,32,32,0.0);
+	color:#9E5AAF;
+	padding: 10px;
+	border-radius: 100px;
+	text-decoration: none;
+	/*display: inline-block;*/
+	float:left;
+	margin-top: 5px;
+}
+#post-author {
+	/*display: inline-block;*/
+	font-family: Raleway;
+	font-weight: bold;
+	font-size: 24px;
+	margin-top: 12px;
+	margin-left: 20px;
+	float:left;
+}
 
+.post-vote {
+	border: 1px dashed white;
+	border-radius: 50%;
+	background-color: rgba(42,42,42,0.0);
+	color: white;
+	float: left;
+	margin-left: 20px;
+	width: 50px;
+	height: 50px;
+}
+
+/*trying to add category checkboxes to post creation. Couldn't get the :checked to work*/
 label.collection_check_boxes {
 	margin-right: 10px;
 	vertical-align: -2px;
